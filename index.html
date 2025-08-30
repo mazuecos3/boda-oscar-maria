@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Boda - Oscar & Maria</title>
+  <style>
+/* --- FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Great+Vibes&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("foto-pareja.jpg") no-repeat center/cover fixed;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* HERO: primera sección sin overlay */
+section.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  
+}
+
+/* CONTENIDO PRINCIPAL (todo junto) */
+section.content {
+  width: 100%;
+  padding: 30px 15px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  text-align: center;
+}
+
+/* TITULOS */
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  margin-bottom: 15px;
+}
+.final h2 { color: #e91e63; }
+
+/* BOTONES */
+.btn, button, .copy-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background: #e91e63;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover, button:hover, .copy-btn:hover {
+  transform: scale(1.05);
+  background: #ad1457;
+}
+
+/* FOTO PRINCIPAL */
+.foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  margin: 20px 0;
+  box-shadow: 0px 6px 25px rgba(0,0,0,0.25);
+}
+
+/* IMAGENES EVENTOS */
+.evento img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: 15px 0;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* CUENTA ATRÁS */
+#countdown {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* ITINERARIO */
+.itinerario {
+  font-size: 1.1rem;
+  line-height: 2;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  display: inline-block;
+  text-align: left;
+}
+
+/* FORMULARIOS */
+#confirmacion input, 
+#confirmacion select, 
+#musica input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #eecda3;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* REGALOS */
+.cuenta {
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ---- TIMELINE ---- */
+.timeline {
+  margin: 40px auto;
+  max-width: 700px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+.timeline h2 { color: #e91e63; }
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  border-left: 3px solid #e91e63;
+  text-align: left;
+}
+.timeline li {
+  margin: 20px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.timeline li span {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  background: #e91e63;
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Oscar & Maria</h1>
+    <h2>¡Nos casamos!</h2>
+    <p>6 de Junio de 2026</p>
+    <p>💌 Haz scroll para descubrir más</p>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="content">
+
+    <h2>Después de casi 10 años juntos…</h2>
+    <h2>¡Al fin nos casamos!</h2>
+    <img src="foto-pareja.jpg" alt="Pareja" class="foto">
+    <p><strong>Oscar & Maria</strong></p>
+
+    <h2>Tan solo quedan…</h2>
+    <div id="countdown"></div>
+    <p>El <strong>6 de Junio de 2026</strong> será un día muy especial e inolvidable y queremos compartirlo con vosotros.</p>
+
+    <h2>Ceremonia</h2>
+    <img src="iglesia.jpg" alt="Iglesia San Jorge Paiporta" class="evento">
+    <p><strong>Iglesia San Jorge</strong><br>Paiporta, Valencia</p>
+    <a href="https://www.google.com/maps?q=Iglesia+San+Jorge+Paiporta" target="_blank" class="btn">¿Cómo llegar?</a>
+
+    <h2>Celebración</h2>
+    <img src="alqueria.jpg" alt="Alquería Kukala Valencia" class="evento">
+    <p><strong>Alquería Kukala</strong><br>Valencia</p>
+    <a href="https://www.google.com/maps?q=Alqueria+Kukala+Valencia" target="_blank" class="btn">¿Cómo llegar?</a>
+
+    <h2>Itinerario</h2>
+    <div class="itinerario">
+      ⛪️ Ceremonia - 12:30 h <br>
+      🥂 Cocktail - 14:30 h <br>
+      🍽️ Banquete - 16:00 h <br>
+      🎵 Inicio de la Fiesta - 18:00 h <br>
+      🚘 Fin de la Fiesta - 23:00 h
+    </div>
+
+    <h2>🎵 Pide tu canción</h2>
+    <p>¿Qué canción te gustaría escuchar en la boda?</p>
+    <input type="text" id="cancion" placeholder="Ejemplo: Despacito - Luis Fonsi">
+    <button onclick="guardarCancion()">Enviar</button>
+
+    <h2>💌 Confirmación de asistencia</h2>
+    <form id="formConfirmacion" onsubmit="event.preventDefault(); confirmarAsistencia();">
+      <label>¿Asistirás?</label><br>
+      <label><input type="radio" name="asistencia" value="Sí" checked> Sí</label>
+      <label><input type="radio" name="asistencia" value="No"> No</label><br><br>
+
+      <label>Nombre(s) *</label><br>
+      <input type="text" id="nombre" required placeholder="Ejemplo: María y Juan"><br><br>
+
+      <label>Cantidad de personas:</label><br>
+      <select id="cantidad">
+        <option value="1" selected>1</option><option value="2">2</option>
+        <option value="3">3</option><option value="4">4</option>
+        <option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option>
+        <option value="9">9</option><option value="10">10</option>
+      </select><br><br>
+
+      <label>Alergias / Intolerancias / Vegano:</label><br>
+      <input type="text" id="alergias" placeholder="Ejemplo: Sin gluten, vegano..."><br><br>
+
+      <label>¿Coges autobús? (Salida Paiporta - Kukala 14:00)</label><br>
+      <label><input type="radio" name="bus" value="Sí" checked onchange="mostrarOpcionesVuelta()"> Sí</label>
+      <label><input type="radio" name="bus" value="No" onchange="mostrarOpcionesVuelta()"> No</label><br><br>
+
+      <div id="opcionesVuelta">
+        <label>Hora de vuelta:</label><br>
+        <select id="horaVuelta">
+          <option value="20:00">Kukala - Paiporta 20:00</option>
+          <option value="23:00">Kukala - Paiporta 23:00</option>
+        </select>
+      </div><br>
+      <button type="submit">Confirmar asistencia</button>
+    </form>
+
+    <h2>Regalo</h2>
+    <p>Lo más importante para nosotros es que nos acompañéis, pero si queréis participar en nuestro viaje de luna de miel:</p>
+    <div class="cuenta">
+      <span id="iban">ES12 3456 7890 1234 5678 9012</span>
+      <button class="copy-btn" onclick="copiarIBAN()">Copiar</button>
+    </div>
+    <p>También aceptamos ✉️ 😉</p>
+
+    <div class="final">
+      <h2>Oscar & Maria</h2>
+      <p>¡Os esperamos a todos!</p>
+    </div>
+
+  </section>
+
+  <script>
+    // Cuenta atrás
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("June 6, 2026 17:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000*60*60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000*60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+      } else {
+        countdown.innerHTML = "¡Hoy es el gran día! 💍";
+      }
+    }, 1000);
+
+    // Copiar IBAN
+    function copiarIBAN() {
+      const iban = document.getElementById("iban").innerText;
+      navigator.clipboard.writeText(iban).then(() => {
+        alert("Número de cuenta copiado ✅");
+      });
+    }
+
+    // URLs de Google Apps Script (cámbialas por las tuyas)
+    const URL_CANCIONES = "https://script.google.com/macros/s/AKfycbxwmSUqIavmbH3gpi9eZo6cWYFu20r43l03eSmvLmwwbqArvZ8Sea8NR8U2ZF1mizwW/exec";
+    const URL_CONFIRMACIONES = "https://script.google.com/macros/s/AKfycbxXCQj6e9z9_L6PlQebyTSt7K18eoDQeIB-43t9OwKLgQHa4SeNfdXGFZ2KjglSHQqK/exec";
+  
+    // Guardar canción
+    function guardarCancion() {
+      const cancion = document.getElementById("cancion").value.trim();
+      if (!cancion) { alert("Por favor escribe una canción."); return; }
+      fetch(URL_CANCIONES, { method: "POST", body: JSON.stringify({ cancion }) })
+        .then(() => {
+          alert("✅ Canción guardada correctamente");
+          document.getElementById("cancion").value = "";
+        })
+        .catch(() => alert("❌ Error al guardar la canción"));
+    }
+
+    // Mostrar / ocultar opciones bus
+    function mostrarOpcionesVuelta() {
+      const bus = document.querySelector('input[name="bus"]:checked').value;
+      document.getElementById("opcionesVuelta").style.display = (bus === "Sí") ? "block" : "none";
+    }
+
+    // Confirmar asistencia
+    function confirmarAsistencia() {
+      const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+      const nombre = document.getElementById("nombre").value.trim();
+      const cantidad = document.getElementById("cantidad").value;
+      const alergias = document.getElementById("alergias").value.trim();
+      const bus = document.querySelector('input[name="bus"]:checked').value;
+      const horaVuelta = (bus === "Sí") ? document.getElementById("horaVuelta").value : "";
+      if (!nombre) { alert("Por favor introduce tu nombre."); return; }
+      fetch(URL_CONFIRMACIONES, {
+        method: "POST",
+        body: JSON.stringify({ asistencia, nombre, cantidad, alergias, bus, horaVuelta })
+      }).then(() => {
+        alert("💌 ¡Gracias por confirmar tu asistencia!");
+        document.getElementById("formConfirmacion").reset();
+        mostrarOpcionesVuelta();
+      }).catch(() => alert("❌ Error al confirmar asistencia, inténtalo de nuevo"));
+    }
+
+    window.onload = () => { mostrarOpcionesVuelta(); };
+  </script>
+</body>
+</html>
