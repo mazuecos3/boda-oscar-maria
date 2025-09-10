@@ -3,215 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <title>Boda - Oscar & Maria</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-  /* --- FUENTES --- */
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Great+Vibes&display=swap');
+/* --- FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Great+Vibes&display=swap');
 
-  body {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #f9ecec, #fffaf7);
-    color: #333;
-    text-align: center;
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("foto-pareja.jpg") no-repeat center/cover fixed;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-  section {
-    padding: 50px 20px;
-    position: relative;
-  }
+/* HERO: primera sección sin overlay */
+section.hero {
+ -- min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  
+}
 
-  /* TITULOS */
-  h1, h2 {
-    font-family: 'Great Vibes', cursive;
-    margin: 10px 0;
-  }
-  h1 {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-    color: #e91e63;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
-    color: #6b4226;
-  }
-  p { font-size: 1rem; line-height: 1.6; }
+/* CONTENIDO PRINCIPAL (todo junto) */
+section.content {
+  width: 100%;
+  padding: 30px 15px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  text-align: center;
+}
 
-  /* BLOQUES ESTILO CRISTAL */
-  .bloque {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    padding: 25px 15px;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  }
+/* TITULOS */
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  margin-bottom: 15px;
+}
+.final h2 { color: #e91e63; }
 
-  /* FOTO PRINCIPAL */
-  .foto {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
-    margin: 20px 0;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-  }
+/* BOTONES */
+.btn, button, .copy-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background: #e91e63;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover, button:hover, .copy-btn:hover {
+  transform: scale(1.05);
+  background: #ad1457;
+}
 
-  /* EVENTOS */
-  .evento img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 14px;
-    margin: 15px 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  }
-  .mapa a { color: #e91e63; font-weight: bold; text-decoration: none; }
+/* FOTO PRINCIPAL */
+.foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  margin: 20px 0;
+  box-shadow: 0px 6px 25px rgba(0,0,0,0.25);
+}
 
-  /* BOTONES */
-  .btn, button, .copy-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 26px;
-    background: linear-gradient(135deg, #e91e63, #ad1457);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-  .btn:hover, button:hover, .copy-btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
+/* IMAGENES EVENTOS */
+.evento img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: 15px 0;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
 
-  /* CUENTA ATRÁS */
-  #countdown {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #6b4226;
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-    margin: 15px 0;
-  }
+/* CUENTA ATRÁS */
+#countdown {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
 
-  /* ITINERARIO */
-  .itinerario {
-    background: rgba(233,30,99,0.08);
-    border-left: 4px solid #e91e63;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 20px auto;
-    text-align: left;
-    display: inline-block;
-    font-size: 1rem;
-  }
+/* ITINERARIO */
+.itinerario {
+  font-size: 1.1rem;
+  line-height: 2;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  display: inline-block;
+  text-align: left;
+}
 
-  /* FORMULARIOS */
-  input, select {
-    width: 90%;
-    max-width: 400px;
-    padding: 12px;
-    border: 2px solid #e7c6b5;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
+/* FORMULARIOS */
+#confirmacion input, 
+#confirmacion select, 
+#musica input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #eecda3;
+  border-radius: 8px;
+  margin-top: 10px;
+}
 
-  /* REGALOS */
-  .cuenta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-  }
-  #iban {
-    background: #fff;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    word-break: break-word;
-  }
+/* REGALOS */
+.cuenta {
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-  .final h2 {
-    font-size: 2rem;
-    color: #e91e63;
-  }
-
-  /* MOBILE FIRST */
-  @media (max-width: 600px) {
-    section { padding: 30px 15px; }
-    h1 { font-size: 2.3rem; }
-    h2 { font-size: 1.6rem; }
-    .foto { width: 150px; height: 150px; }
-  }
+/* ---- TIMELINE ---- */
+.timeline {
+  margin: 40px auto;
+  max-width: 700px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+.timeline h2 { color: #e91e63; }
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  border-left: 3px solid #e91e63;
+  text-align: left;
+}
+.timeline li {
+  margin: 20px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.timeline li span {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  background: #e91e63;
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 0.9rem;
+}
   </style>
 </head>
 <body>
 
-  <!-- PRESENTACIÓN -->
-  <section class="bloque">
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="content">
+  
     <h1>Oscar & Maria</h1>
     <h2>¡Nos casamos!</h2>
     <h3>6 de Junio de 2026</h3>
+ 
+	
+	
+    <h2>Después de casi 10 años juntos…</h2>
+    <h2>¡Al fin nos casamos!</h2>
     <img src="foto-pareja.jpg" alt="Pareja" class="foto">
-    <p>Después de casi 10 años juntos… ¡al fin nos casamos!</p>
-  </section>
+    <p><strong>Oscar & Maria</strong></p>
 
-  <!-- CUENTA ATRÁS -->
-  <section class="bloque">
     <h2>Tan solo quedan…</h2>
     <div id="countdown"></div>
-    <p>El <strong>6 de Junio de 2026</strong> será un día muy especial y queremos compartirlo con vosotros.</p>
-  </section>
+    <p>El <strong>6 de Junio de 2026</strong> será un día muy especial e inolvidable y queremos compartirlo con vosotros.</p>
 
-  <!-- CEREMONIA -->
-  <section class="bloque evento">
     <h2>Ceremonia</h2>
-    <img src="iglesia.jpg" alt="Iglesia San Jorge Paiporta">
+    <img src="iglesia.jpg" alt="Iglesia San Jorge Paiporta" class="evento">
     <p><strong>Iglesia San Jorge</strong><br>Paiporta, Valencia</p>
-    <div class="mapa">
-      <a href="https://www.google.com/maps?q=Iglesia+San+Jorge+Paiporta" target="_blank">📍 Ver en Google Maps</a>
-    </div>
-  </section>
+    <a href="https://www.google.com/maps?q=Iglesia+San+Jorge+Paiporta" target="_blank" class="btn">¿Cómo llegar?</a>
 
-  <!-- CELEBRACIÓN -->
-  <section class="bloque evento">
     <h2>Celebración</h2>
-    <img src="alqueria.jpg" alt="Alquería Kukala Valencia">
+    <img src="alqueria.jpg" alt="Alquería Kukala Valencia" class="evento">
     <p><strong>Alquería Kukala</strong><br>Valencia</p>
-    <div class="mapa">
-      <a href="https://www.google.com/maps?q=Alqueria+Kukala+Valencia" target="_blank">📍 Ver en Google Maps</a>
-    </div>
-  </section>
+    <a href="https://www.google.com/maps?q=Alqueria+Kukala+Valencia" target="_blank" class="btn">¿Cómo llegar?</a>
 
-  <!-- ITINERARIO -->
-  <section class="bloque">
     <h2>Itinerario</h2>
     <div class="itinerario">
       ⛪️ Ceremonia - 12:30 h <br>
       🥂 Cocktail - 14:30 h <br>
       🍽️ Banquete - 16:00 h <br>
-      🎵 Fiesta - 18:00 h <br>
-      🚘 Fin - 23:00 h
+      🎵 Inicio de la Fiesta - 18:00 h <br>
+      🚘 Fin de la Fiesta - 23:00 h
     </div>
-  </section>
 
-  <!-- CANCIÓN -->
-  <section class="bloque">
     <h2>🎵 Pide tu canción</h2>
+    <p>¿Qué canción te gustaría escuchar en la boda?</p>
     <input type="text" id="cancion" placeholder="Ejemplo: Despacito - Luis Fonsi">
     <button onclick="guardarCancion()">Enviar</button>
-  </section>
 
-  <!-- CONFIRMACIÓN -->
-  <section class="bloque">
     <h2>💌 Confirmación de asistencia</h2>
     <form id="formConfirmacion" onsubmit="event.preventDefault(); confirmarAsistencia();">
       <label>¿Asistirás?</label><br>
@@ -219,11 +217,11 @@
       <label><input type="radio" name="asistencia" value="No"> No</label><br><br>
 
       <label>Nombre(s) *</label><br>
-      <input type="text" id="nombre" required><br><br>
+      <input type="text" id="nombre" required placeholder="Ejemplo: María y Juan"><br><br>
 
       <label>Cantidad de personas:</label><br>
       <select id="cantidad">
-        <option value="1">1</option><option value="2">2</option>
+        <option value="1" selected>1</option><option value="2">2</option>
         <option value="3">3</option><option value="4">4</option>
         <option value="5">5</option><option value="6">6</option>
         <option value="7">7</option><option value="8">8</option>
@@ -231,39 +229,35 @@
       </select><br><br>
 
       <label>Alergias / Intolerancias / Vegano:</label><br>
-      <input type="text" id="alergias"><br><br>
+      <input type="text" id="alergias" placeholder="Ejemplo: Sin gluten, vegano..."><br><br>
 
-      <label>¿Coges autobús? (14:00 Paiporta - Kukala)</label><br>
+      <label>¿Coges autobús? (Salida Paiporta - Kukala 14:00)</label><br>
       <label><input type="radio" name="bus" value="Sí" checked onchange="mostrarOpcionesVuelta()"> Sí</label>
       <label><input type="radio" name="bus" value="No" onchange="mostrarOpcionesVuelta()"> No</label><br><br>
 
       <div id="opcionesVuelta">
         <label>Hora de vuelta:</label><br>
         <select id="horaVuelta">
-          <option value="20:00">20:00</option>
-          <option value="23:00">23:00</option>
+          <option value="20:00">Kukala - Paiporta 20:00</option>
+          <option value="23:00">Kukala - Paiporta 23:00</option>
         </select>
       </div><br>
-
       <button type="submit">Confirmar asistencia</button>
     </form>
-  </section>
 
-  <!-- REGALO -->
-  <section class="bloque">
     <h2>Regalo</h2>
-    <p>Si queréis participar en nuestro viaje de luna de miel:</p>
+    <p>Lo más importante para nosotros es que nos acompañéis, pero si queréis participar en nuestro viaje de luna de miel:</p>
     <div class="cuenta">
       <span id="iban">ES12 3456 7890 1234 5678 9012</span>
       <button class="copy-btn" onclick="copiarIBAN()">Copiar</button>
     </div>
     <p>También aceptamos ✉️ 😉</p>
-  </section>
 
-  <!-- FINAL -->
-  <section class="bloque final">
-    <h2>Oscar & Maria</h2>
-    <p>¡Os esperamos a todos!</p>
+    <div class="final">
+      <h2>Oscar & Maria</h2>
+      <p>¡Os esperamos a todos!</p>
+    </div>
+
   </section>
 
   <script>
@@ -292,7 +286,7 @@
       });
     }
 
-    // URLs de Google Apps Script
+    // URLs de Google Apps Script (cámbialas por las tuyas)
     const URL_CANCIONES = "https://script.google.com/macros/s/AKfycbxwmSUqIavmbH3gpi9eZo6cWYFu20r43l03eSmvLmwwbqArvZ8Sea8NR8U2ZF1mizwW/exec";
     const URL_CONFIRMACIONES = "https://script.google.com/macros/s/AKfycbxXCQj6e9z9_L6PlQebyTSt7K18eoDQeIB-43t9OwKLgQHa4SeNfdXGFZ2KjglSHQqK/exec";
   
